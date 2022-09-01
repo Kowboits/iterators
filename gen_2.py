@@ -7,12 +7,12 @@ nested_list = [
 
 
 def flat_generator(nested_list):
-    for elem in nested_list:
-        if isinstance(elem, list):
-            for lst in flat_generator(elem):
-                yield lst
+    for i in nested_list:
+        if isinstance(i, list):
+            for j in flat_generator(i):
+                yield j
         else:
-            yield elem
+            yield i
 
 if __name__ == "__main__":
     lst = [item for item in flat_generator(nested_list)]
